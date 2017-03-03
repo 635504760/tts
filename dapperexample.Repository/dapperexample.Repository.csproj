@@ -51,6 +51,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DbContextFactory\IContext.cs" />
     <Compile Include="DbContextFactory\IDbContextFactory.cs" />
+    <Compile Include="DbContextFactory\Impl\DapperContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,9 +63,7 @@
       <Name>dapperexample.Entity</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DbContextFactory\Impl\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
