@@ -9,6 +9,7 @@ using System.Configuration;
 using DapperExtensions;
 using System.Diagnostics;
 using System.Threading;
+using Dapper;
 namespace dapperexample.Repository.DbContextFactory.Impl
 {
     public abstract class DapperContext:IContext
@@ -97,6 +98,39 @@ namespace dapperexample.Repository.DbContextFactory.Impl
             _transaction = null;
             _isTransactionStarted = false;
             DebugPrint("Transaction rollbacked and disposed.");
+        }
+
+        public int Execute(string sql, object param = null, CommandType commandType = CommandType.Text)
+        {
+            return SqlMapper.Execute(_connection, sql, param, _transaction, _commandTimeout, commandType);
+        }
+
+        public IDataReader ExecuteReader(string sql, object param = null, CommandType commandType = CommandType.Text)
+        {
+            return SqlMapper.ExecuteReader(_connection,sql,param,_transaction,_commandTimeout,commandType);
+        }
+
+        public T ExecuteScalar<T>(string sql, object param = null, CommandType commandType = CommandType.Text)
+        {
+            return SqlMapper.ExecuteScalar<T>(_connection,sql,param,_transaction,_commandTimeout,commandType);
+        }
+        public IEnumerable<T> Query<T>(string sql, object param = null, CommandType commandType = CommandType.Text)
+        {
+            return SqlMapper.Query<T>(_connection,sql,param,_transaction,true,_commandTimeout,commandType);
+        }
+
+        public IEnumerable<TReturn> Query<TFirst, TSecond, TReturn>(string sql, Func<TFirst, TSecond, TReturn> map, object param = null, string splitOn = "Id", CommandType commandType = CommandType.Text)
+        {
+            return SqlMapper.Query<TFirst, TSecond, TReturn>(_connection,sql,map,param,_transaction,true,splitOn,_commandTimeout,commandType);
+        }
+        public void Dispose()
+        {
+            if (_isTransactionStarted)
+                Rollback();
+            _connection.Close();
+            _connection.Dispose();
+            _connection = null;
+            DebugPrint("Connecrtion closed and disposed.");
         }
     }
 }
