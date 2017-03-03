@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dapperexample.Web
+namespace dapperexample.Repository.DbContextFactory
 {
-    public class Class1
+    class IDbContextFactory
     {
     }
 }
