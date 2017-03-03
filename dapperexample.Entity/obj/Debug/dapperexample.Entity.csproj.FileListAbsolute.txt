@@ -1,0 +1,5 @@
+C:\Users\St\Desktop\GitHubDesktop\tts\dapperexample.Entity\bin\Debug\dapperexample.Entity.dll
+C:\Users\St\Desktop\GitHubDesktop\tts\dapperexample.Entity\bin\Debug\dapperexample.Entity.pdb
+C:\Users\St\Desktop\GitHubDesktop\tts\dapperexample.Entity\obj\Debug\dapperexample.Entity.csprojResolveAssemblyReference.cache
+C:\Users\St\Desktop\GitHubDesktop\tts\dapperexample.Entity\obj\Debug\dapperexample.Entity.dll
+C:\Users\St\Desktop\GitHubDesktop\tts\dapperexample.Entity\obj\Debug\dapperexample.Entity.pdb
