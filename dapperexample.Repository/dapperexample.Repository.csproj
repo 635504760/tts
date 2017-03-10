@@ -53,6 +53,8 @@
     <Compile Include="DbContextFactory\IContext.cs" />
     <Compile Include="DbContextFactory\IDbContextFactory.cs" />
     <Compile Include="DbContextFactory\Impl\DapperContext.cs" />
+    <Compile Include="DbContextFactory\Impl\DbContextFactory.cs" />
+    <Compile Include="DbContextFactory\MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

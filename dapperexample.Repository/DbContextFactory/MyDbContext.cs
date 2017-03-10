@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 using dapperexample.Repository.DbContextFactory.Impl;
 namespace dapperexample.Repository.DbContextFactory
 {
-    public interface IDbContextFactory
+    public class MyDbContext:DapperContext
     {
-        DapperContext GetDbContext();
+        public MyDbContext(string connString)
+            : base(connString)
+        {
+ 
+        }
     }
 }
